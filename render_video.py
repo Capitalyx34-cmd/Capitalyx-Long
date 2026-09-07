@@ -14,12 +14,12 @@ chat_id = os.environ.get('CHAT_ID')
 telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN')
 
 # 👇 Channel Name Updated for New Channel 👇
-channel_name = "Mental Chessboard®" 
+channel_name = "Capitalyx" 
 
 print(f"DEBUG: Processing {len(scenes_data)} scenes async...")
 
-# --- SMART DYNAMIC FALLBACK KEYWORDS (Updated for Dark Psychology Niche) ---
-fallback_env = os.environ.get('FALLBACK_KEYWORDS', 'falling chess pieces, shadowy figure in suit, corporate boardroom in dark, hourglass, abstract brain, a wolf walking, stormy clouds')
+# --- SMART DYNAMIC FALLBACK KEYWORDS (Updated for Corporate/Finance Niche) ---
+fallback_env = os.environ.get('FALLBACK_KEYWORDS', 'dark skyscraper at night, luxury bank vault slow zoom, abstract stock market graph falling, shadowy anonymous men in suits, falling gold, abstract chess boards')
 FALLBACK_KEYWORDS = [kw.strip() for kw in fallback_env.split(',')]
 
 TEMP_DIR = "/dev/shm" if os.path.exists("/dev/shm") else os.getcwd()
@@ -56,7 +56,7 @@ async def get_audio_duration(file_path):
         return 5.0 
 
 async def process_scene(session, i, scene):
-    keyword = scene.get('keyword', 'abstract glowing brain')
+    keyword = scene.get('keyword', 'dark skyscraper at night')
     text_line = scene.get('text', '').strip()
     if not text_line: return None
     
@@ -210,8 +210,8 @@ async def main_pipeline():
         run_id = os.environ.get('GITHUB_RUN_ID', str(int(time.time())))
         tag_name = f"vid-{run_id}"
         
-        # 👇 Repo name updated based on screenshot[cite: 1] 👇
-        repo_name = os.environ.get('GITHUB_REPOSITORY', "MentalChessboard32-lab/Mental-Chessboard-Long") 
+        # 👇 Repo name updated based on screenshot 👇
+        repo_name = os.environ.get('GITHUB_REPOSITORY', "Capitalyx34-cmd/Capitalyx-Long") 
         
         try:
             cmd = ['gh', 'release', 'create', tag_name, final_video, '--repo', repo_name, '--notes', 'Automated Video Render']
