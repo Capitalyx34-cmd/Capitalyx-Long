@@ -1,4 +1,4 @@
-name: Auto Render The Influence Game Video
+name: Auto Render Capitalyx Video
 
 on:
   repository_dispatch:
